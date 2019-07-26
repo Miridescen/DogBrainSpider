@@ -19,7 +19,7 @@ class DogbrainspiderPipeline(object):
         # port = settings['MONGODB_PORT']
         # dbname = settings['MONGODB_DBNAME']
 
-        client = pymongo.MongoClient(host='127.0.0.1',port='27017')
+        client = pymongo.MongoClient(host='127.0.0.1',port=27017)
         mdb = client['blog']
 
         self.post = mdb['news']
