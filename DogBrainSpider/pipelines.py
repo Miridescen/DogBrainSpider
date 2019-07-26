@@ -7,20 +7,20 @@
 
 import sys
 import pymongo
-from bson import json_util
+# from bson import json_util
 
-from scrapy.conf import settings
+# from scrapy.conf import settings
 import json
 
 class DogbrainspiderPipeline(object):
 
     def __init__(self):
-        host = settings['MONGODB_HOST']
-        port = settings['MONGODB_PORT']
-        dbname = settings['MONGODB_DBNAME']
+        # host = settings['MONGODB_HOST']
+        # port = settings['MONGODB_PORT']
+        # dbname = settings['MONGODB_DBNAME']
 
-        client = pymongo.MongoClient(host=host,port=port)
-        mdb = client[dbname]
+        client = pymongo.MongoClient(host='127.0.0.1',port='27017')
+        mdb = client['blog']
 
         self.post = mdb['news']
 
@@ -40,11 +40,6 @@ class DogbrainspiderPipeline(object):
     def close_spider(self, spider):
         print("结束爬虫")
 
-        msgs = self.post.find({})
-        json_docs = []
-
-        for msg in msgs:
-            json_doc = json.dumps(msg, default=json_util.default)
-            json_docs.append(json_doc)
+        # msgs = s.append(json_doc)
 
         # print(json_docs)
