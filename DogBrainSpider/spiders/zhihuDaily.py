@@ -6,8 +6,8 @@ class zhihuDaily(scrapy.Spider):
 
     name = 'zhihuDaily'
     start_urls = [
-        # 'http://daily.zhihu.com/',
-        # 'https://www.ifanr.com/',
+        'http://daily.zhihu.com/',
+        'https://www.ifanr.com/',
         'https://www.toodaylab.com/'
 
     ]
